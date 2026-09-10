@@ -74,15 +74,72 @@
 	line-height: 1;
 }
 
-/* Keep the compact hero typography intact; other sections use natural spacing. */
-.no-tracking,
-.no-tracking * {
-	letter-spacing: normal !important;
+@keyframes education-orbit {
+	from { transform: translate(-50%, -50%) rotate(0deg); }
+	to { transform: translate(-50%, -50%) rotate(360deg); }
 }
+
+@keyframes education-orbit-reverse {
+	from { transform: translate(-50%, -50%) rotate(360deg); }
+	to { transform: translate(-50%, -50%) rotate(0deg); }
+}
+
+@keyframes education-particle {
+	0%, 100% { opacity: 0.25; transform: scale(0.7); }
+	50% { opacity: 1; transform: scale(1.35); }
+}
+
+.education-orbit {
+	animation: education-orbit 12s linear infinite;
+	border-right-color: transparent;
+	border-bottom-color: transparent;
+}
+
+.education-orbit-reverse {
+	animation: education-orbit-reverse 8s linear infinite;
+	border-left-color: transparent;
+}
+
+.education-particle {
+	animation: education-particle 2.4s ease-in-out infinite;
+}
+
+.education-particle--delay {
+	animation-delay: -1.2s;
+}
+
+.reel-timeline {
+	appearance: none;
+	border-radius: 999px;
+	background: rgba(255, 255, 255, 0.4);
+}
+
+.reel-timeline::-webkit-slider-thumb {
+	appearance: none;
+	width: 1.1rem;
+	height: 1.1rem;
+	border-radius: 999px;
+	background: #fff;
+}
+
+.reel-volume {
+	appearance: slider-vertical;
+	-webkit-appearance: slider-vertical;
+	writing-mode: vertical-lr;
+	direction: rtl;
+}
+
+/* Keep the compact hero typography intact; other sections use natural spacing. */
+
 
 @media (prefers-reduced-motion: reduce) {
 	.hero-marquee__track {
 		animation-play-state: paused;
 	}
-}
 
+	.education-orbit,
+	.education-orbit-reverse,
+	.education-particle {
+		animation-play-state: paused;
+	}
+}
