@@ -1,7 +1,8 @@
 import React, { useRef, useState } from 'react'
 import profileImage from './assets/profile.png'
-import jewelleryReel from './reels/Jewellery-5.mp4'
-import jewelleryReelPoster from './assets/jewellery-reel-poster.jpg'
+import socialReelOne from './reels/reels-1.mp4'
+import socialReelTwo from './reels/reels-2.mp4'
+import socialReelThree from './reels/reels-3.mp4'
 import motionReelOne from './reels/motion-reels-1.mp4'
 import motionReelTwo from './reels/motion-reels-2.mp4'
 import motionReelThree from './reels/motion-reels-3.mp4'
@@ -154,7 +155,6 @@ export default function About() {
               className="absolute inset-0 h-full w-full object-cover object-center opacity-95 transition duration-700 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0e0e0e]/75 via-transparent to-[#0e0e0e]/10" aria-hidden="true" />
-            <span className="absolute left-8 top-8 font-poppins text-[0.68rem] font-bold uppercase tracking-[0.16em]">PR / 001</span>
             <span className="absolute bottom-8 right-8 font-poppins text-[0.68rem] font-medium uppercase tracking-wide">Edit with intention</span>
           </div>
         </div>
@@ -216,7 +216,7 @@ export default function About() {
               <h3 className="m-0 mt-1 text-lg font-bold text-[#e46f70]">Let's Automation</h3>
               <p className="m-0 mt-1 max-w-2xl text-[14px] leading-relaxed text-[#f7f5f2]/85 tracking-wider">Created social-media-ready video content with a focus on clean editing, smooth transitions, sound synchronization, captions, and visual effects. Worked on promotional and engaging video projects while maintaining a professional and consistent visual style.</p>
             </article>
-            <article className="pb-1 mt-0 pt-4">
+            <article className="pb-1">
               <p className="m-0 text-base tracking-wide">Video Editing 2025 - 2026</p>
               <h3 className="m-0 mt-1 text-lg font-bold text-[#e46f70]">Jaherat Box</h3>
               <p className="m-0 mt-1 max-w-2xl text-[14px] leading-relaxed text-[#f7f5f2]/85 tracking-wider">I am Currently working as a Video Editor and Motion Graphics Designer, creating engaging and professional video content for various projects. Responsible for video editing, motion graphics, visual effects, transitions, text animations, sound design, and color enhancement. Focused on delivering clean, creative, and high-quality visuals that effectively communicate the purpose of each project.</p>
@@ -333,23 +333,23 @@ export default function About() {
         </div>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          <article className="group overflow-hidden rounded-[1.25rem] border border-[#f7f5f2]/20 bg-[#0b0b0b] transition duration-500 hover:-translate-y-2 hover:border-[#e46f70]">
+          <article className="group overflow-hidden rounded-[1.25rem] border border-[#f7f5f2]/20 bg-[#0b0b0b]">
             <div className="relative aspect-[9/16] overflow-hidden bg-[#0b0b0b]">
-              <ReelPlayer src={jewelleryReel} poster={jewelleryReelPoster} label="Jewellery social media reel" />
+              <ReelPlayer src={socialReelOne} label="Social media reel one" />
               <span className="pointer-events-none absolute left-4 top-4 rounded-full bg-[#111111]/75 px-3 py-1 font-poppins text-xs font-bold uppercase tracking-[0.12em] text-[#f7f5f2]">01 / Reel</span>
             </div>
           </article>
 
-          <article className="group overflow-hidden rounded-[1.25rem] border border-[#f7f5f2]/20 bg-[#0b0b0b] transition duration-500 hover:-translate-y-2 hover:border-[#e46f70]">
+          <article className="group overflow-hidden rounded-[1.25rem] border border-[#f7f5f2]/20 bg-[#0b0b0b]">
             <div className="relative aspect-[9/16] overflow-hidden bg-[#0b0b0b]">
-              <ReelPlayer src="/videos/reel-2.mp4" label="Social media reel two" />
+              <ReelPlayer src={socialReelTwo} label="Social media reel two" />
               <span className="pointer-events-none absolute left-4 top-4 rounded-full bg-[#111111]/75 px-3 py-1 font-poppins text-xs font-bold uppercase tracking-[0.12em] text-[#f7f5f2]">02 / Reel</span>
             </div>
           </article>
 
-          <article className="group overflow-hidden rounded-[1.25rem] border border-[#f7f5f2]/20 bg-[#0b0b0b] transition duration-500 hover:-translate-y-2 hover:border-[#e46f70]">
+          <article className="group overflow-hidden rounded-[1.25rem] border border-[#f7f5f2]/20 bg-[#0b0b0b]">
             <div className="relative aspect-[9/16] overflow-hidden bg-[#0b0b0b]">
-              <ReelPlayer src="/reels/motion-reels-1.mp4" label="Social media reel three" />
+              <ReelPlayer src={socialReelThree} label="Social media reel three" />
               <span className="pointer-events-none absolute left-4 top-4 rounded-full bg-[#111111]/75 px-3 py-1 font-poppins text-xs font-bold uppercase tracking-[0.12em] text-[#f7f5f2]">03 / Reel</span>
             </div>
           </article>
@@ -364,21 +364,21 @@ export default function About() {
         </div>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          <article className="group overflow-hidden rounded-[1.25rem] border border-[#e46f70]/40 bg-[#211719] transition duration-500 hover:-translate-y-2 hover:border-[#e46f70]">
+          <article className="group overflow-hidden rounded-[1.25rem] border border-[#e46f70]/40 bg-[#211719]">
             <div className="relative aspect-[9/16] overflow-hidden bg-[#302022]">
               <ReelPlayer src={motionReelOne} label="Motion graphics video one" />
               <span className="pointer-events-none absolute left-4 top-4 rounded-full bg-[#111111]/75 px-3 py-1 font-poppins text-xs font-bold uppercase tracking-[0.12em] text-[#f7f5f2]">01 / Motion</span>
             </div>
           </article>
 
-          <article className="group overflow-hidden rounded-[1.25rem] border border-[#e46f70]/40 bg-[#211719] transition duration-500 hover:-translate-y-2 hover:border-[#e46f70]">
+          <article className="group overflow-hidden rounded-[1.25rem] border border-[#e46f70]/40 bg-[#211719]">
             <div className="relative aspect-[9/16] overflow-hidden bg-[#302022]">
               <ReelPlayer src={motionReelTwo} label="Motion graphics video two" />
               <span className="pointer-events-none absolute left-4 top-4 rounded-full bg-[#111111]/75 px-3 py-1 font-poppins text-xs font-bold uppercase tracking-[0.12em] text-[#f7f5f2]">02 / Motion</span>
             </div>
           </article>
 
-          <article className="group overflow-hidden rounded-[1.25rem] border border-[#e46f70]/40 bg-[#211719] transition duration-500 hover:-translate-y-2 hover:border-[#e46f70]">
+          <article className="group overflow-hidden rounded-[1.25rem] border border-[#e46f70]/40 bg-[#211719]">
             <div className="relative aspect-[9/16] overflow-hidden bg-[#302022]">
               <ReelPlayer src={motionReelThree} label="Motion graphics video three" />
               <span className="pointer-events-none absolute left-4 top-4 rounded-full bg-[#111111]/75 px-3 py-1 font-poppins text-xs font-bold uppercase tracking-[0.12em] text-[#f7f5f2]">03 / Motion</span>
