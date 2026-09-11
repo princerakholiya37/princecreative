@@ -51,11 +51,11 @@ export default function Hero() {
           </div>
           <h1
             id="hero-title"
-            className="relative z-10 flex w-full max-w-full flex-col items-center text-[clamp(2.9rem,15.5vw,6.8rem)] font-montserrat font-extrabold uppercase leading-none tracking-[-0.02em] sm:text-[clamp(3.7rem,13.4vw,13.5rem)]"
+            className="hero-title relative z-10 flex w-full max-w-full flex-col items-center text-[clamp(2.9rem,15.5vw,6.8rem)] font-montserrat font-extrabold uppercase leading-none tracking-[-0.02em] sm:text-[clamp(3.7rem,13.4vw,13.5rem)]"
           >
             <p className="inline-block bg-gradient-to-r from-[#e46f70] via-[#9e4b4e] to-[#311d20] bg-clip-text py-[0.07em] font-anton font-normal leading-[1.05] tracking-[0.01em] text-transparent">Portfolio</p>
           </h1>
-          <p className="absolute bottom-5 z-20 m-0 font-kaushan text-[clamp(1.2rem,2.7vw,2.35rem)] tracking-[0.01em] text-[#291d20] drop-shadow-[0_2px_1px_rgba(255,255,255,0.45)] sm:bottom-14">Prince Rakholiya</p>
+          <p className="hero-signature absolute bottom-5 z-20 m-0 font-kaushan text-[clamp(1.2rem,2.7vw,2.35rem)] tracking-[0.01em] text-[#291d20] drop-shadow-[0_2px_1px_rgba(255,255,255,0.45)] sm:bottom-14">Prince Rakholiya</p>
         </div>
 
         <footer className="relative z-10 flex items-end justify-between gap-4 text-[clamp(0.55rem,0.8vw,0.74rem)] font-semibold uppercase tracking-[0.09em] text-[#6c5e5b]">

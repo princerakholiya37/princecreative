@@ -73,6 +73,17 @@
 	line-height: 1;
 }
 
+@media (max-height: 500px) and (orientation: landscape) {
+	.hero-title {
+		font-size: clamp(2.6rem, 10vw, 4.5rem) !important;
+	}
+
+	.hero-signature {
+		bottom: 0.25rem;
+		font-size: clamp(1rem, 2.4vw, 1.4rem);
+	}
+}
+
 @keyframes education-orbit {
 	from { transform: translate(-50%, -50%) rotate(0deg); }
 	to { transform: translate(-50%, -50%) rotate(360deg); }
