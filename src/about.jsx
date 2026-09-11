@@ -2,9 +2,13 @@ import React, { useRef, useState } from 'react'
 import profileImage from './assets/profile.png'
 import jewelleryReel from './reels/Jewellery-5.mp4'
 import jewelleryReelPoster from './assets/jewellery-reel-poster.jpg'
+import motionReelOne from './reels/motion-reels-1.mp4'
+import motionReelTwo from './reels/motion-reels-2.mp4'
+import motionReelThree from './reels/motion-reels-3.mp4'
 
 function ReelPlayer({ src, poster, label }) {
   const videoRef = useRef(null)
+  const backdropVideoRef = useRef(null)
   const [isPlaying, setIsPlaying] = useState(false)
   const [isMuted, setIsMuted] = useState(true)
   const [progress, setProgress] = useState(0)
@@ -19,8 +23,16 @@ function ReelPlayer({ src, poster, label }) {
     const video = videoRef.current
     if (!video) return
     if (video.paused) {
-      try { await video.play() } catch (_) { /* Playback waits for user interaction. */ }
-    } else video.pause()
+      const backdrop = backdropVideoRef.current
+      if (backdrop) backdrop.currentTime = video.currentTime
+      try {
+        await video.play()
+        if (backdrop) await backdrop.play()
+      } catch (_) { /* Playback waits for user interaction. */ }
+    } else {
+      video.pause()
+      backdropVideoRef.current?.pause()
+    }
   }
 
   const toggleMute = (event) => {
@@ -34,7 +46,11 @@ function ReelPlayer({ src, poster, label }) {
   const seek = (event) => {
     event.stopPropagation()
     const video = videoRef.current
-    if (video?.duration) video.currentTime = (Number(event.target.value) / 100) * video.duration
+    if (video?.duration) {
+      const time = (Number(event.target.value) / 100) * video.duration
+      video.currentTime = time
+      if (backdropVideoRef.current) backdropVideoRef.current.currentTime = time
+    }
   }
 
   const formatTime = (seconds) => {
@@ -87,16 +103,17 @@ function ReelPlayer({ src, poster, label }) {
 
   return (
     <div className="group/player relative h-full w-full" onClick={togglePlay}>
-      <video ref={videoRef} className="h-full w-full cursor-pointer object-contain" poster={poster} muted={isMuted} playsInline preload="metadata" aria-label={label} onLoadedMetadata={(event) => setDuration(event.currentTarget.duration || 0)} onPlay={() => setIsPlaying(true)} onPause={() => setIsPlaying(false)} onEnded={() => setIsPlaying(false)} onTimeUpdate={(event) => { const { currentTime, duration: videoDuration } = event.currentTarget; setProgress(videoDuration ? (currentTime / videoDuration) * 100 : 0) }}>
+      <video ref={backdropVideoRef} className="pointer-events-none absolute inset-0 h-full w-full scale-110 object-cover opacity-45 blur-2xl" src={src} muted playsInline preload="metadata" aria-hidden="true" />
+      <video ref={videoRef} className="relative z-10 h-full w-full cursor-pointer object-contain" poster={poster} muted={isMuted} playsInline preload="metadata" aria-label={label} onLoadedMetadata={(event) => setDuration(event.currentTarget.duration || 0)} onPlay={() => setIsPlaying(true)} onPause={() => { setIsPlaying(false); backdropVideoRef.current?.pause() }} onEnded={() => setIsPlaying(false)} onTimeUpdate={(event) => { const { currentTime, duration: videoDuration } = event.currentTarget; setProgress(videoDuration ? (currentTime / videoDuration) * 100 : 0) }}>
         <source src={src} type="video/mp4" />
       </video>
       <video ref={previewVideoRef} className="pointer-events-none absolute h-px w-px opacity-0" src={src} muted playsInline preload="auto" aria-hidden="true" />
       <canvas ref={previewCanvasRef} className="hidden" aria-hidden="true" />
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#08090d]/75 via-transparent to-transparent" aria-hidden="true" />
-      <button type="button" onClick={(event) => { event.stopPropagation(); togglePlay() }} className={`absolute left-1/2 top-1/2 grid h-14 w-14 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-[#111111]/75 text-white backdrop-blur-sm transition hover:scale-110 ${isPlaying ? 'pointer-events-none opacity-0' : 'pointer-events-auto opacity-100'}`} aria-label={isPlaying ? 'Pause reel' : 'Play reel'}>
+      <div className="pointer-events-none absolute inset-0 z-20 bg-gradient-to-t from-[#08090d]/75 via-transparent to-transparent" aria-hidden="true" />
+      <button type="button" onClick={(event) => { event.stopPropagation(); togglePlay() }} className={`absolute left-1/2 top-1/2 z-30 grid h-14 w-14 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-[#111111]/75 text-white backdrop-blur-sm transition hover:scale-110 ${isPlaying ? 'pointer-events-none opacity-0' : 'pointer-events-auto opacity-100'}`} aria-label={isPlaying ? 'Pause reel' : 'Play reel'}>
         {isPlaying ? <svg className="h-6 w-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 5h4v14H7zm6 0h4v14h-4z" /></svg> : <svg className="ml-1 h-6 w-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.14v13.72L19 12 8 5.14Z" /></svg>}
       </button>
-      <div className="pointer-events-none absolute bottom-4 left-4 right-4 flex items-end gap-3 opacity-0 transition group-hover/player:pointer-events-auto group-hover/player:opacity-100" onClick={(event) => event.stopPropagation()}>
+      <div className="pointer-events-none absolute bottom-4 left-4 right-4 z-30 flex items-end gap-3 opacity-0 transition group-hover/player:pointer-events-auto group-hover/player:opacity-100" onClick={(event) => event.stopPropagation()}>
         <div className="relative w-full">
           {preview.active && (
             <div className="pointer-events-none absolute bottom-5 z-20 -translate-x-1/2" style={{ left: `${preview.position}%` }}>
@@ -332,53 +349,40 @@ export default function About() {
 
           <article className="group overflow-hidden rounded-[1.25rem] border border-[#f7f5f2]/20 bg-[#0b0b0b] transition duration-500 hover:-translate-y-2 hover:border-[#e46f70]">
             <div className="relative aspect-[9/16] overflow-hidden bg-[#0b0b0b]">
-              <ReelPlayer src="/videos/reel-3.mp4" label="Social media reel three" />
+              <ReelPlayer src="/reels/motion-reels-1.mp4" label="Social media reel three" />
               <span className="pointer-events-none absolute left-4 top-4 rounded-full bg-[#111111]/75 px-3 py-1 font-poppins text-xs font-bold uppercase tracking-[0.12em] text-[#f7f5f2]">03 / Reel</span>
             </div>
           </article>
         </div>
       </div>
 
-      <div className="relative mx-auto max-w-[1500px] border-t border-[#f7f5f2]/20 px-5 py-[clamp(4rem,8vw,7rem)] sm:px-10 lg:px-[7vw]">
-        <div className="mb-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+      <div className="relative mx-auto max-w-[1500px] border-t border-[#f7f5f2]/20 px-5 py-[clamp(3rem,3vw,6rem)] sm:px-10 lg:px-[7vw]">
+        <div className="mb-10 flex flex-col items-center gap-4 text-center">
           <div>
-            <p className="m-0 mb-4 font-poppins text-[0.75rem] font-bold uppercase tracking-[0.18em] text-[#e46f70]">Selected work / 02</p>
-            <h2 className="m-0 text-[clamp(2.3rem,4.8vw,5rem)] font-extrabold uppercase leading-[0.9] tracking-[-0.05em]">Motion <span className="text-[#e46f70]">Graphics</span></h2>
+            <h2 className="m-0 text-[clamp(2.3rem,3.8vw,5rem)] font-extrabold uppercase leading-[0.9]">Motion <span className="text-[#e46f70]">Graphics</span></h2>
           </div>
         </div>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           <article className="group overflow-hidden rounded-[1.25rem] border border-[#e46f70]/40 bg-[#211719] transition duration-500 hover:-translate-y-2 hover:border-[#e46f70]">
-            <div className="relative aspect-video overflow-hidden bg-[#302022]">
-              <video className="h-full w-full object-cover" controls playsInline preload="metadata" aria-label="Motion graphics video one">
-                <source src="/videos/motion-1.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+            <div className="relative aspect-[9/16] overflow-hidden bg-[#302022]">
+              <ReelPlayer src={motionReelOne} label="Motion graphics video one" />
               <span className="pointer-events-none absolute left-4 top-4 rounded-full bg-[#111111]/75 px-3 py-1 font-poppins text-xs font-bold uppercase tracking-[0.12em] text-[#f7f5f2]">01 / Motion</span>
             </div>
-            <div className="flex items-center justify-between gap-4 px-5 py-4"><h3 className="m-0 text-base font-bold">Title Animation</h3><span className="font-poppins text-xs uppercase tracking-[0.14em] text-[#e46f70]">Play / Sound</span></div>
           </article>
 
           <article className="group overflow-hidden rounded-[1.25rem] border border-[#e46f70]/40 bg-[#211719] transition duration-500 hover:-translate-y-2 hover:border-[#e46f70]">
-            <div className="relative aspect-video overflow-hidden bg-[#302022]">
-              <video className="h-full w-full object-cover" controls playsInline preload="metadata" aria-label="Motion graphics video two">
-                <source src="/videos/motion-2.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+            <div className="relative aspect-[9/16] overflow-hidden bg-[#302022]">
+              <ReelPlayer src={motionReelTwo} label="Motion graphics video two" />
               <span className="pointer-events-none absolute left-4 top-4 rounded-full bg-[#111111]/75 px-3 py-1 font-poppins text-xs font-bold uppercase tracking-[0.12em] text-[#f7f5f2]">02 / Motion</span>
             </div>
-            <div className="flex items-center justify-between gap-4 px-5 py-4"><h3 className="m-0 text-base font-bold">Brand Intro</h3><span className="font-poppins text-xs uppercase tracking-[0.14em] text-[#e46f70]">Play / Sound</span></div>
           </article>
 
           <article className="group overflow-hidden rounded-[1.25rem] border border-[#e46f70]/40 bg-[#211719] transition duration-500 hover:-translate-y-2 hover:border-[#e46f70]">
-            <div className="relative aspect-video overflow-hidden bg-[#302022]">
-              <video className="h-full w-full object-cover" controls playsInline preload="metadata" aria-label="Motion graphics video three">
-                <source src="/videos/motion-3.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+            <div className="relative aspect-[9/16] overflow-hidden bg-[#302022]">
+              <ReelPlayer src={motionReelThree} label="Motion graphics video three" />
               <span className="pointer-events-none absolute left-4 top-4 rounded-full bg-[#111111]/75 px-3 py-1 font-poppins text-xs font-bold uppercase tracking-[0.12em] text-[#f7f5f2]">03 / Motion</span>
             </div>
-            <div className="flex items-center justify-between gap-4 px-5 py-4"><h3 className="m-0 text-base font-bold">Visual Story</h3><span className="font-poppins text-xs uppercase tracking-[0.14em] text-[#e46f70]">Play / Sound</span></div>
           </article>
         </div>
       </div>
