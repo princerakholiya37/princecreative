@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+  <title id="title">Prince Creative</title>
+  <defs>
+    <linearGradient id="coral" x1="18" y1="16" x2="108" y2="112" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f49a8d"/>
+      <stop offset=".5" stop-color="#e46f70"/>
+      <stop offset="1" stop-color="#8f3f4b"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="30" fill="#201b1b"/>
+  <rect x="7" y="7" width="114" height="114" rx="24" fill="none" stroke="#f7f5f2" stroke-opacity=".2"/>
+  <path d="M34 95V33h25.5c17.5 0 28.5 8.4 28.5 23.5 0 15.7-11.4 24.4-29.2 24.4H49.5V95H34Zm15.5-48.7v22.5h9.3c8.6 0 13.5-3.9 13.5-11.3 0-7.3-4.9-11.2-13.5-11.2h-9.3Z" fill="#f7f5f2"/>
+  <path d="M93.5 29.5 99 40l10.5 5.5-10.5 5.5L93.5 61 88 51l-10.5-5.5L88 40l5.5-10.5Z" fill="url(#coral)"/>
+  <circle cx="95" cy="94" r="7" fill="url(#coral)"/>
+</svg>

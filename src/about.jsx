@@ -171,7 +171,7 @@ export default function About() {
               <p className="text-[clamp(0.95rem,1.25vw,1.15rem)] text-[#f7f5f2] tracking-wider">Experience</p>
             </div>
             <div className="flex flex-col border-l-[0.28rem] border-[#e46f70] pl-[0.7rem]">
-              <span className="text-[clamp(1rem,1.5vw,1.30rem)] font-normal text-[#e46f70] tracking-wide">200+ videos</span>
+              <span className="text-[clamp(1rem,1.5vw,1.30rem)] font-normal text-[#e46f70] tracking-wide">400+ videos</span>
               <span className="text-[clamp(0.95rem,1.25vw,1.15rem)] text-[#f7f5f2] tracking-wider">Completed</span>
             </div>
           </div>
@@ -184,7 +184,7 @@ export default function About() {
           <div className="mt-7 space-y-8">
             <div className="border-l-4 border-[#e46f70] pl-5">
               <p className="m-0 font-poppins text-sm font-bold tracking-wide text-[#e46f70]">2020 - 2021</p>
-              <p className="m-0 mt-1 text-[15px] font-normal tracking-wider">SSC (10th) Sadbhavna Vidhyalaya</p>
+              <p className="m-0 mt-1 text-[15px] font-normal tracking-wider">SSC (10th) Hariom Vidhyalaya</p>
             </div>
             <div className="border-l-4 border-[#e46f70] pl-5">
               <p className="m-0 font-poppins text-sm font-bold text-[#e46f70] tracking-wide">2022 - 2023</p>
