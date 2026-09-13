@@ -1,11 +1,11 @@
 import React, { useRef, useState } from 'react'
 import profileImage from './assets/profile.png'
-import socialReelOne from './reels/reels-1.mp4'
-import socialReelTwo from './reels/reels-2.mp4'
-import socialReelThree from './reels/reels-3.mp4'
-import motionReelOne from './reels/motion-reels-1.mp4'
-import motionReelTwo from './reels/motion-reels-2.mp4'
-import motionReelThree from './reels/motion-reels-3.mp4'
+const socialReelOne = "https://res.cloudinary.com/kukuwypk/video/upload/v1789299140/reels-1.mp4"; 
+// import socialReelTwo from './reels/reels-2.mp4'
+// import socialReelThree from './reels/reels-3.mp4'
+// import motionReelOne from './reels/motion-reels-1.mp4'
+// import motionReelTwo from './reels/motion-reels-2.mp4'
+// import motionReelThree from './reels/motion-reels-3.mp4'
 
 function ReelPlayer({ src, poster, label }) {
   const videoRef = useRef(null)
@@ -341,14 +341,14 @@ export default function About() {
 
           <article className="group overflow-hidden rounded-[1.25rem] border border-[#f7f5f2]/20 bg-[#021723] shadow-[4px_5px_0_#2e6b8b]">
             <div className="relative aspect-[9/16] overflow-hidden bg-[#021723]">
-              <ReelPlayer src={socialReelTwo} label="Social media reel two" />
+              {/* <ReelPlayer src={socialReelTwo} label="Social media reel two" /> */}
               <span className="pointer-events-none absolute left-4 top-4 rounded-full bg-[#021723]/75 px-3 py-1 font-poppins text-xs font-bold uppercase tracking-[0.12em] text-[#f7f5f2]">02 / Reel</span>
             </div>
           </article>
 
           <article className="group overflow-hidden rounded-[1.25rem] border border-[#f7f5f2]/20 bg-[#021723] shadow-[4px_5px_0_#2e6b8b]">
             <div className="relative aspect-[9/16] overflow-hidden bg-[#021723]">
-              <ReelPlayer src={socialReelThree} label="Social media reel three" />
+              {/* <ReelPlayer src={socialReelThree} label="Social media reel three" /> */}
               <span className="pointer-events-none absolute left-4 top-4 rounded-full bg-[#021723]/75 px-3 py-1 font-poppins text-xs font-bold uppercase tracking-[0.12em] text-[#f7f5f2]">03 / Reel</span>
             </div>
           </article>
@@ -365,21 +365,21 @@ export default function About() {
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 lg:mx-auto lg:max-w-[900px]">
           <article className="group overflow-hidden rounded-[1.25rem] border border-[#76b5d1]/40 bg-[#041d2d] shadow-[4px_5px_0_#2e6b8b]">
             <div className="relative aspect-[9/16] overflow-hidden bg-[#062033]">
-              <ReelPlayer src={motionReelOne} label="Motion graphics video one" />
+              {/* <ReelPlayer src={motionReelOne} label="Motion graphics video one" /> */}
               <span className="pointer-events-none absolute left-4 top-4 rounded-full bg-[#021723]/75 px-3 py-1 font-poppins text-xs font-bold uppercase tracking-[0.12em] text-[#f7f5f2]">01 / Motion</span>
             </div>
           </article>
 
           <article className="group overflow-hidden rounded-[1.25rem] border border-[#76b5d1]/40 bg-[#041d2d] shadow-[4px_5px_0_#2e6b8b]">
             <div className="relative aspect-[9/16] overflow-hidden bg-[#062033]">
-              <ReelPlayer src={motionReelTwo} label="Motion graphics video two" />
+              {/* <ReelPlayer src={motionReelTwo} label="Motion graphics video two" /> */}
               <span className="pointer-events-none absolute left-4 top-4 rounded-full bg-[#021723]/75 px-3 py-1 font-poppins text-xs font-bold uppercase tracking-[0.12em] text-[#f7f5f2]">02 / Motion</span>
             </div>
           </article>
 
           <article className="group overflow-hidden rounded-[1.25rem] border border-[#76b5d1]/40 bg-[#041d2d] shadow-[4px_5px_0_#2e6b8b]">
             <div className="relative aspect-[9/16] overflow-hidden bg-[#062033]">
-              <ReelPlayer src={motionReelThree} label="Motion graphics video three" />
+              {/* <ReelPlayer src={motionReelThree} label="Motion graphics video three" /> */}
               <span className="pointer-events-none absolute left-4 top-4 rounded-full bg-[#021723]/75 px-3 py-1 font-poppins text-xs font-bold uppercase tracking-[0.12em] text-[#f7f5f2]">03 / Motion</span>
             </div>
           </article>

@@ -31,7 +31,7 @@ export default function Footer() {
           </a>
           <a className="border-t border-[#f5fafc]/25 p-6 no-underline transition hover:bg-[#0d5b84] md:border-l md:border-t-0 md:p-7" href="mailto:princerakholiya37@email.com">
             <span className="block text-[18px] tracking-wide">Email</span>
-            <strong className="mt-1 block break-words text-[clamp(0.75rem,1.35vw,1.125rem)] tracking-wide">princerakholiya37@email.com</strong>
+            <strong className="mt-1 block break-words text-lg tracking-wide">princerakholiya37@email.com</strong>
           </a>
         </div>
 
