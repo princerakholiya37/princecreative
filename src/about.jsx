@@ -335,7 +335,7 @@ export default function About() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:mx-auto lg:max-w-[900px] lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 mx-auto lg:max-w-[900px] w-full max-w-[280px] lg:grid-cols-3">
           <article className="group overflow-hidden rounded-[1.25rem] border border-[#f7f5f2]/20 bg-[#021723] shadow-[4px_5px_0_#2e6b8b]">
             <div className="relative aspect-[9/16] overflow-hidden bg-[#021723]">
               <ReelPlayer src={socialReelOne} label="Social media reel one" />
