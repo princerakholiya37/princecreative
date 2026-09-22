@@ -10,6 +10,11 @@ const motionReelOne = "https://res.cloudinary.com/kukuwypk/video/upload/v1789300
 const motionReelTwo = "https://res.cloudinary.com/kukuwypk/video/upload/v1789300130/portfolio_1_1.mp4"; 
 const motionReelThree = "https://res.cloudinary.com/kukuwypk/video/upload/v1789300271/automation_06.mp4"; 
 
+const reelCoverThree ='./assets/cover/reel-3.png';
+const motionCoverOne = './assets/cover/motion-cover-1.png';
+const motionCoverTwo = './assets/cover/motion-cover-2.png';
+const motionCoverThree = './assets/cover/motion-cover-3.png';
+
 
 function ReelPlayer({ src, poster, label }) {
   const videoRef = useRef(null)
@@ -292,6 +297,10 @@ export default function About() {
               <div className="mb-3 flex justify-between text-lg"><span className='tracking-wide'>DaVinci Resolve</span><span className="font-poppins text-sm text-[#76b5d1]">76%</span></div>
               <div className="h-2 rounded-full bg-[#f7f5f2]/20"><div className="h-full w-[76%] rounded-full bg-[#76b5d1] shadow-[0_0_14px_rgba(6,39,71,0.55)]" /></div>
             </div>
+                <div>
+              <div className="mb-3 flex justify-between text-lg"><span className='tracking-wide'>VN</span><span className="font-poppins text-sm text-[#76b5d1]">90%</span></div>
+              <div className="h-2 rounded-full bg-[#f7f5f2]/20"><div className="h-full w-[88%] rounded-full bg-[#76b5d1] shadow-[0_0_14px_rgba(6,39,71,0.55)]" /></div>
+            </div>
           </div>
         </div>
       </div>
@@ -352,7 +361,7 @@ export default function About() {
 
           <article className="group overflow-hidden rounded-[1.25rem] border border-[#f7f5f2]/20 bg-[#021723] shadow-[4px_5px_0_#2e6b8b]">
             <div className="relative aspect-[9/16] overflow-hidden bg-[#021723]">
-              <ReelPlayer src={socialReelThree} label="Social media reel three" />
+              <ReelPlayer src={socialReelThree} poster={reelCoverThree} label="Social media reel three" />
               <span className="pointer-events-none absolute left-4 top-4 rounded-full bg-[#021723]/75 px-3 py-1 font-poppins text-xs font-bold uppercase tracking-[0.12em] text-[#f7f5f2]">03 / Reel</span>
             </div>
           </article>
@@ -390,21 +399,21 @@ export default function About() {
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 mx-auto w-full max-w-[300px] lg:max-w-[900px]">
           <article className="group overflow-hidden rounded-[1.25rem] border border-[#76b5d1]/40 bg-[#041d2d] shadow-[4px_5px_0_#2e6b8b]">
             <div className="relative aspect-[9/16] overflow-hidden bg-[#062033]">
-              <ReelPlayer src={motionReelOne} label="Motion graphics video one" />
+              <ReelPlayer src={motionReelOne} poster={motionCoverOne} label="Motion graphics video one" />
               <span className="pointer-events-none absolute left-4 top-4 rounded-full bg-[#021723]/75 px-3 py-1 font-poppins text-xs font-bold uppercase tracking-[0.12em] text-[#f7f5f2]">01 / Motion</span>
             </div>
           </article>
 
           <article className="group overflow-hidden rounded-[1.25rem] border border-[#76b5d1]/40 bg-[#041d2d] shadow-[4px_5px_0_#2e6b8b]">
             <div className="relative aspect-[9/16] overflow-hidden bg-[#062033]">
-              <ReelPlayer src={motionReelTwo} label="Motion graphics video two" />
+              <ReelPlayer src={motionReelTwo} poster={motionCoverTwo} label="Motion graphics video two" />
               <span className="pointer-events-none absolute left-4 top-4 rounded-full bg-[#021723]/75 px-3 py-1 font-poppins text-xs font-bold uppercase tracking-[0.12em] text-[#f7f5f2]">02 / Motion</span>
             </div>
           </article>
 
           <article className="group overflow-hidden rounded-[1.25rem] border border-[#76b5d1]/40 bg-[#041d2d] shadow-[4px_5px_0_#2e6b8b]">
             <div className="relative aspect-[9/16] overflow-hidden bg-[#062033]">
-              <ReelPlayer src={motionReelThree} label="Motion graphics video three" />
+              <ReelPlayer src={motionReelThree} poster={motionCoverThree} label="Motion graphics video three" />
               <span className="pointer-events-none absolute left-4 top-4 rounded-full bg-[#021723]/75 px-3 py-1 font-poppins text-xs font-bold uppercase tracking-[0.12em] text-[#f7f5f2]">03 / Motion</span>
             </div>
           </article>
