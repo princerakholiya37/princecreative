@@ -50,7 +50,7 @@ h6 {
 	text-align: center;
 }
 
-.not-found-page__content { max-width: 43rem; position: relative; z-index: 2; }
+.not-found-page__content { max-width: 70rem; position: relative; z-index: 2; }
 .not-found-page__eyebrow { align-items: center; color: #76b5d1; display: flex; font-size: 0.72rem; font-weight: 600; gap: 0.6rem; justify-content: center; letter-spacing: 0.1em; margin: 0; text-transform: uppercase; }
 .not-found-page__eyebrow span { animation: not-found-pulse 1.8s ease-in-out infinite; background: #76b5d1; border-radius: 999px; box-shadow: 0 0 1rem #76b5d1; height: 0.5rem; width: 0.5rem; }
 .not-found-page__number { align-items: center; display: flex; font-family: 'Bricolage Grotesque', sans-serif; font-size: clamp(8rem, 28vw, 17rem); font-weight: 800; justify-content: center; letter-spacing: -0.1em; line-height: 0.78; margin: clamp(1.2rem, 3vw, 2rem) 0 1.8rem; }
@@ -60,7 +60,11 @@ h6 {
 .not-found-page__zero::after { border: 1px solid #f7f5f255; border-radius: inherit; content: ''; inset: 12%; position: absolute; }
 .not-found-page__zero i { animation: not-found-orbit 4s linear infinite; background: #f7f5f2; border-radius: 50%; box-shadow: 0 0 0.75rem #fff; height: 0.055em; position: absolute; transform-origin: 0.26em 0.26em; width: 0.055em; }
 .not-found-page__zero i:nth-child(2) { animation-delay: -1.33s; }.not-found-page__zero i:nth-child(3) { animation-delay: -2.66s; }
-.not-found-page h1 { font-size: clamp(2.35rem, 7vw, 5.4rem); letter-spacing: -0.06em; line-height: 0.92; margin: 0; }.not-found-page h1 span { color: #76b5d1; }
+.not-found-page h1 { font-size: clamp(2.35rem, 6vw, 4.8rem); line-height: 0.92; margin: 0; }.not-found-page h1 span { color: #76b5d1; }
+
+@media (min-width: 1024px) {
+	.not-found-page h1 { white-space: nowrap; }
+}
 .not-found-page__copy { color: #f7f5f2cc; font-size: clamp(0.88rem, 2vw, 1.05rem); line-height: 1.7; margin: 1rem auto 1rem; max-width: 32rem; }
 .not-found-page__button { align-items: center; background: #76b5d1; box-shadow: 0.3rem 0.3rem 0 #0d5b84; color: #021723; display: inline-flex; font-size: 0.85rem; font-weight: 700; gap: 0.8rem; letter-spacing: 0.04em; padding: 0.95rem 1.25rem; text-decoration: none; transition: transform 220ms ease, box-shadow 220ms ease; }.not-found-page__button:hover { box-shadow: 0.1rem 0.1rem 0 #0d5b84; transform: translate(0.2rem, 0.2rem); }.not-found-page__button svg { fill: none; height: 1.2rem; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2; width: 1.2rem; }
 .not-found-page__footer { bottom: 0.6rem; color: #f7f5f299; font-size: 0.65rem; font-weight: 600; left: 50%; letter-spacing: 0.16em; margin: 0; position: absolute; text-transform: uppercase; transform: translateX(-50%); white-space: nowrap; z-index: 2; }
