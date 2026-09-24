@@ -1,5 +1,14 @@
 import React, { useRef, useState } from 'react'
 import profileImage from './assets/profile.png'
+import reelCoverOne from './assets/cover/reels-1.png'
+import reelCoverTwo from './assets/cover/reels-2.png'
+import reelCoverThree from './assets/cover/reels-3.png'
+import reelCoverFour from './assets/cover/reels-4.png'
+import reelCoverFive from './assets/cover/reels-5.png'
+import reelCoverSix from './assets/cover/reels-6.png'
+import motionCoverOne from './assets/cover/motion-cover-1.png'
+import motionCoverTwo from './assets/cover/motion-cover-2.png'
+import motionCoverThree from './assets/cover/motion-cover-3.png'
 const socialReelOne = "https://res.cloudinary.com/kukuwypk/video/upload/v1789299140/reels-1.mp4"; 
 const socialReelTwo = "https://res.cloudinary.com/kukuwypk/video/upload/v1789299908/param-4.mp4"; 
 const socialReelThree = "https://res.cloudinary.com/kukuwypk/video/upload/v1789300398/sahayam-10.mp4"; 
@@ -9,12 +18,6 @@ const socialReelSix = "https://res.cloudinary.com/kukuwypk/video/upload/v1789301
 const motionReelOne = "https://res.cloudinary.com/kukuwypk/video/upload/v1789300070/graphics.mp4"; 
 const motionReelTwo = "https://res.cloudinary.com/kukuwypk/video/upload/v1789300130/portfolio_1_1.mp4"; 
 const motionReelThree = "https://res.cloudinary.com/kukuwypk/video/upload/v1789300271/automation_06.mp4"; 
-
-const reelCoverThree ='./assets/cover/reel-3.png';
-const motionCoverOne = './assets/cover/motion-cover-1.png';
-const motionCoverTwo = './assets/cover/motion-cover-2.png';
-const motionCoverThree = './assets/cover/motion-cover-3.png';
-
 
 function ReelPlayer({ src, poster, label }) {
   const videoRef = useRef(null)
@@ -120,7 +123,7 @@ function ReelPlayer({ src, poster, label }) {
       <video ref={previewVideoRef} className="pointer-events-none absolute h-px w-px opacity-0" src={src} muted playsInline preload="auto" aria-hidden="true" />
       <canvas ref={previewCanvasRef} className="hidden" aria-hidden="true" />
       <div className="pointer-events-none absolute inset-0 z-20 bg-gradient-to-t from-[#08090d]/75 via-transparent to-transparent" aria-hidden="true" />
-      <button type="button" onClick={(event) => { event.stopPropagation(); togglePlay() }} className={`absolute left-1/2 top-1/2 z-30 grid h-14 w-14 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-[#021723]/75 text-white backdrop-blur-sm transition hover:scale-110 ${isPlaying ? 'pointer-events-none opacity-0' : 'pointer-events-auto opacity-100'}`} aria-label={isPlaying ? 'Pause reel' : 'Play reel'}>
+      <button type="button" onClick={(event) => { event.stopPropagation(); togglePlay() }} className={`absolute left-1/2 top-1/2 z-30 grid h-14 w-14 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-[#021723]/75 text-white backdrop-blur-sm transition hover:scale-110 ${isPlaying ? 'pointer-events-none opacity-0' : 'pointer-events-none opacity-0 group-hover/player:pointer-events-auto group-hover/player:opacity-100'}`} aria-label={isPlaying ? 'Pause reel' : 'Play reel'}>
         {isPlaying ? <svg className="h-6 w-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 5h4v14H7zm6 0h4v14h-4z" /></svg> : <svg className="ml-1 h-6 w-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.14v13.72L19 12 8 5.14Z" /></svg>}
       </button>
       <div className="pointer-events-none absolute bottom-4 left-4 right-4 z-30 flex items-end gap-3 opacity-0 transition group-hover/player:pointer-events-auto group-hover/player:opacity-100" onClick={(event) => event.stopPropagation()}>
@@ -347,14 +350,14 @@ export default function About() {
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 mx-auto lg:max-w-[900px] w-full max-w-[300px] lg:grid-cols-3">
           <article className="group overflow-hidden rounded-[1.25rem] border border-[#f7f5f2]/20 bg-[#021723] shadow-[4px_5px_0_#2e6b8b]">
             <div className="relative aspect-[9/16] overflow-hidden bg-[#021723]">
-              <ReelPlayer src={socialReelOne} label="Social media reel one" />
+              <ReelPlayer src={socialReelOne} poster={reelCoverOne} label="Social media reel one" />
               <span className="pointer-events-none absolute left-4 top-4 rounded-full bg-[#021723]/75 px-3 py-1 font-poppins text-xs font-bold uppercase tracking-[0.12em] text-[#f7f5f2]">01 / Reel</span>
             </div>
           </article>
 
           <article className="group overflow-hidden rounded-[1.25rem] border border-[#f7f5f2]/20 bg-[#021723] shadow-[4px_5px_0_#2e6b8b]">
             <div className="relative aspect-[9/16] overflow-hidden bg-[#021723]">
-              <ReelPlayer src={socialReelTwo} label="Social media reel two" />
+              <ReelPlayer src={socialReelTwo} poster={reelCoverTwo} label="Social media reel two" />
               <span className="pointer-events-none absolute left-4 top-4 rounded-full bg-[#021723]/75 px-3 py-1 font-poppins text-xs font-bold uppercase tracking-[0.12em] text-[#f7f5f2]">02 / Reel</span>
             </div>
           </article>
@@ -368,21 +371,21 @@ export default function About() {
 
            <article className="group overflow-hidden rounded-[1.25rem] border border-[#f7f5f2]/20 bg-[#021723] shadow-[4px_5px_0_#2e6b8b]">
             <div className="relative aspect-[9/16] overflow-hidden bg-[#021723]">
-              <ReelPlayer src={socialReelFour} label="Social media reel four" />
+              <ReelPlayer src={socialReelFour} poster={reelCoverFour} label="Social media reel four" />
               <span className="pointer-events-none absolute left-4 top-4 rounded-full bg-[#021723]/75 px-3 py-1 font-poppins text-xs font-bold uppercase tracking-[0.12em] text-[#f7f5f2]">04 / Reel</span>
             </div>
           </article>
 
            <article className="group overflow-hidden rounded-[1.25rem] border border-[#f7f5f2]/20 bg-[#021723] shadow-[4px_5px_0_#2e6b8b]">
             <div className="relative aspect-[9/16] overflow-hidden bg-[#021723]">
-              <ReelPlayer src={socialReelFive} label="Social media reel five" />
+              <ReelPlayer src={socialReelFive} poster={reelCoverFive} label="Social media reel five" />
               <span className="pointer-events-none absolute left-4 top-4 rounded-full bg-[#021723]/75 px-3 py-1 font-poppins text-xs font-bold uppercase tracking-[0.12em] text-[#f7f5f2]">05 / Reel</span>
             </div>
           </article>
 
            <article className="group overflow-hidden rounded-[1.25rem] border border-[#f7f5f2]/20 bg-[#021723] shadow-[4px_5px_0_#2e6b8b]">
             <div className="relative aspect-[9/16] overflow-hidden bg-[#021723]">
-              <ReelPlayer src={socialReelSix} label="Social media reel six" />
+              <ReelPlayer src={socialReelSix} poster={reelCoverSix} label="Social media reel six" />
               <span className="pointer-events-none absolute left-4 top-4 rounded-full bg-[#021723]/75 px-3 py-1 font-poppins text-xs font-bold uppercase tracking-[0.12em] text-[#f7f5f2]">06 / Reel</span>
             </div>
           </article>
