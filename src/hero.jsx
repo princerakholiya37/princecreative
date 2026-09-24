@@ -7,7 +7,7 @@ export default function Hero() {
           <div className="hero-marquee__track flex w-max items-center">
             <div className="hero-marquee__group flex shrink-0 items-center" aria-hidden="true">
               <span>Video Editing</span><i>✦</i>
-              <span>Motion Design</span><i>✦</i>
+              <span>Motion Graphics</span><i>✦</i>
               <span>Visual Effects</span><i>✦</i>
               <span>Reels</span><i>✦</i>
               <span>Commercials</span><i>✦</i>
@@ -16,7 +16,7 @@ export default function Hero() {
             </div>
             <div className="hero-marquee__group flex shrink-0 items-center" aria-hidden="true">
               <span>Video Editing</span><i>✦</i>
-              <span>Motion Design</span><i>✦</i>
+              <span>Motion Graphics</span><i>✦</i>
               <span>Visual Effects</span><i>✦</i>
               <span>Reels</span><i>✦</i>
               <span>Commercials</span><i>✦</i>

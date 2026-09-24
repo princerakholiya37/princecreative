@@ -151,10 +151,13 @@ export default function About() {
   return (
     <section className="no-tracking relative w-full overflow-hidden bg-[#021723] text-[#f7f5f2]" aria-labelledby="about-title">
       <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
-        <div className="absolute -left-24 top-1/4 h-72 w-72 rounded-full bg-[#76b5d1]/15 blur-3xl motion-safe:animate-pulse" />
-        <div className="absolute -right-32 bottom-0 h-96 w-96 rounded-full bg-[#031b2a]/20 blur-3xl motion-safe:animate-[pulse_9s_ease-in-out_infinite]" />
-        <div className="absolute left-1/2 top-1/2 h-[38rem] w-[38rem] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#76b5d1]/10 bg-[conic-gradient(from_90deg,transparent,#76b5d1/10,transparent_35%)] blur-2xl motion-safe:animate-[spin_32s_linear_infinite]" />
-        <div className="absolute inset-0 bg-[repeating-linear-gradient(112deg,transparent_0_7px,rgba(255,255,255,0.025)_8px_9px)]" />
+        <div className="about-background-aurora absolute -left-[16rem] top-[8%] h-[34rem] w-[34rem] rounded-full bg-[#76b5d1]/20 blur-3xl" />
+        <div className="about-background-glow absolute -right-[18rem] bottom-[4%] h-[38rem] w-[38rem] rounded-full bg-[#0d5b84]/25 blur-3xl" />
+        <div className="about-background-orbit absolute left-1/2 top-[32rem] h-[38rem] w-[38rem] -translate-x-1/2 rounded-full border border-[#76b5d1]/15 bg-[conic-gradient(from_90deg,transparent,#76b5d1/15,transparent_35%)] blur-2xl" />
+        <div className="about-background-grid absolute inset-0 bg-[repeating-linear-gradient(112deg,transparent_0_7px,rgba(255,255,255,0.025)_8px_9px)]" />
+        <span className="about-background-spark about-background-spark--one absolute left-[14%] top-[18%] h-1.5 w-1.5 rounded-full bg-[#f7f5f2] shadow-[0_0_18px_#76b5d1]" />
+        <span className="about-background-spark about-background-spark--two absolute right-[16%] top-[48%] h-2 w-2 rounded-full bg-[#76b5d1] shadow-[0_0_22px_#76b5d1]" />
+        <span className="about-background-spark about-background-spark--three absolute bottom-[13%] left-[38%] h-1 w-1 rounded-full bg-[#f7f5f2] shadow-[0_0_16px_#f7f5f2]" />
       </div>
       <div className="relative mx-auto grid max-w-[1500px] grid-cols-1 gap-10 px-5 py-[clamp(4rem,4vw,9rem)] sm:px-10 lg:grid-cols-[2fr_3fr] lg:gap-14 lg:px-[4vw]">
         <div className="group relative mx-auto min-h-[22rem] w-full max-w-[25rem] self-center overflow-hidden rounded-[1.4rem] border-2 border-[#f7f5f2] bg-[#062033] sm:min-h-[30rem] lg:max-w-none lg:min-h-[clamp(22rem,38vw,35rem)]" aria-label="Prince Rakholiya creative editor">
@@ -347,7 +350,7 @@ export default function About() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 mx-auto lg:max-w-[900px] w-full max-w-[300px] lg:grid-cols-3">
+        <div className="reels-showcase mx-auto grid w-full max-w-[20rem] grid-cols-1 gap-7 md:max-w-none md:grid-cols-2 md:gap-10 lg:max-w-[900px] lg:grid-cols-3">
           <article className="group overflow-hidden rounded-[1.25rem] border border-[#f7f5f2]/20 bg-[#021723] shadow-[4px_5px_0_#2e6b8b]">
             <div className="relative aspect-[9/16] overflow-hidden bg-[#021723]">
               <ReelPlayer src={socialReelOne} poster={reelCoverOne} label="Social media reel one" />
@@ -399,7 +402,7 @@ export default function About() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 mx-auto w-full max-w-[300px] lg:max-w-[900px]">
+        <div className="motion-showcase mx-auto grid w-full max-w-[20rem] grid-cols-1 gap-7 md:max-w-none md:grid-cols-2 md:gap-10 lg:max-w-[900px] lg:grid-cols-3">
           <article className="group overflow-hidden rounded-[1.25rem] border border-[#76b5d1]/40 bg-[#041d2d] shadow-[4px_5px_0_#2e6b8b]">
             <div className="relative aspect-[9/16] overflow-hidden bg-[#062033]">
               <ReelPlayer src={motionReelOne} poster={motionCoverOne} label="Motion graphics video one" />

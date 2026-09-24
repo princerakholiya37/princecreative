@@ -20,21 +20,57 @@
 		display: none;
 	}
 
-	body,
-	p {
-		font-family: 'Poppins', sans-serif;
-	}
+body,
+p {
+	font-family: 'Poppins', sans-serif;
+}
 
 	h1,
 	h2,
 	h3,
 	h4,
 	h5,
-	h6 {
+h6 {
 				font-family: 'Bricolage Grotesque', 'sans-serif';
 
 	}
 }
+
+.not-found-page {
+	align-items: center;
+	background: #021723;
+	color: #f7f5f2;
+	display: flex;
+	isolation: isolate;
+	justify-content: center;
+	min-height: 100svh;
+	overflow: hidden;
+	padding: 2rem 1.25rem;
+	position: relative;
+	text-align: center;
+}
+
+.not-found-page__content { max-width: 43rem; position: relative; z-index: 2; }
+.not-found-page__eyebrow { align-items: center; color: #76b5d1; display: flex; font-size: 0.72rem; font-weight: 600; gap: 0.6rem; justify-content: center; letter-spacing: 0.1em; margin: 0; text-transform: uppercase; }
+.not-found-page__eyebrow span { animation: not-found-pulse 1.8s ease-in-out infinite; background: #76b5d1; border-radius: 999px; box-shadow: 0 0 1rem #76b5d1; height: 0.5rem; width: 0.5rem; }
+.not-found-page__number { align-items: center; display: flex; font-family: 'Bricolage Grotesque', sans-serif; font-size: clamp(8rem, 28vw, 17rem); font-weight: 800; justify-content: center; letter-spacing: -0.1em; line-height: 0.78; margin: clamp(1.2rem, 3vw, 2rem) 0 1.8rem; }
+.not-found-page__number > span { animation: not-found-number-float 5s ease-in-out infinite; text-shadow: 0.18rem 0.22rem 0 #0d5b84; }
+.not-found-page__number > span:last-child { animation-delay: -2.4s; }
+.not-found-page__zero { align-items: center; animation-delay: -1.2s !important; background: radial-gradient(circle at 32% 28%, #92c9e0, #2e6b8b 44%, #062033 70%); border: clamp(0.5rem, 1.2vw, 0.8rem) solid #76b5d1; border-radius: 50%; box-shadow: inset 0 0 2rem #021723, 0 0 2.5rem #76b5d1aa; display: inline-flex; height: 0.72em; justify-content: center; margin: 0 0.03em; position: relative; width: 0.72em; }
+.not-found-page__zero::after { border: 1px solid #f7f5f255; border-radius: inherit; content: ''; inset: 12%; position: absolute; }
+.not-found-page__zero i { animation: not-found-orbit 4s linear infinite; background: #f7f5f2; border-radius: 50%; box-shadow: 0 0 0.75rem #fff; height: 0.055em; position: absolute; transform-origin: 0.26em 0.26em; width: 0.055em; }
+.not-found-page__zero i:nth-child(2) { animation-delay: -1.33s; }.not-found-page__zero i:nth-child(3) { animation-delay: -2.66s; }
+.not-found-page h1 { font-size: clamp(2.35rem, 7vw, 5.4rem); letter-spacing: -0.06em; line-height: 0.92; margin: 0; }.not-found-page h1 span { color: #76b5d1; }
+.not-found-page__copy { color: #f7f5f2cc; font-size: clamp(0.88rem, 2vw, 1.05rem); line-height: 1.7; margin: 1rem auto 1rem; max-width: 32rem; }
+.not-found-page__button { align-items: center; background: #76b5d1; box-shadow: 0.3rem 0.3rem 0 #0d5b84; color: #021723; display: inline-flex; font-size: 0.85rem; font-weight: 700; gap: 0.8rem; letter-spacing: 0.04em; padding: 0.95rem 1.25rem; text-decoration: none; transition: transform 220ms ease, box-shadow 220ms ease; }.not-found-page__button:hover { box-shadow: 0.1rem 0.1rem 0 #0d5b84; transform: translate(0.2rem, 0.2rem); }.not-found-page__button svg { fill: none; height: 1.2rem; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2; width: 1.2rem; }
+.not-found-page__footer { bottom: 0.6rem; color: #f7f5f299; font-size: 0.65rem; font-weight: 600; left: 50%; letter-spacing: 0.16em; margin: 0; position: absolute; text-transform: uppercase; transform: translateX(-50%); white-space: nowrap; z-index: 2; }
+.not-found-page__aurora { border-radius: 50%; filter: blur(4rem); opacity: 0.36; position: absolute; z-index: -1; }.not-found-page__aurora--one { animation: not-found-aurora-one 13s ease-in-out infinite; background: #0d5b84; height: 30rem; left: -13rem; top: -10rem; width: 30rem; }.not-found-page__aurora--two { animation: not-found-aurora-two 16s ease-in-out infinite; background: #76b5d1; bottom: -16rem; height: 34rem; right: -12rem; width: 34rem; }.not-found-page__grid { background-image: linear-gradient(#76b5d112 1px, transparent 1px), linear-gradient(90deg, #76b5d112 1px, transparent 1px); background-size: 2.8rem 2.8rem; inset: 0; mask-image: radial-gradient(circle at center, black, transparent 75%); position: absolute; z-index: -1; }
+
+@keyframes not-found-pulse { 50% { opacity: 0.35; transform: scale(0.65); } }
+@keyframes not-found-number-float { 50% { transform: translateY(-0.07em); } }
+@keyframes not-found-orbit { from { transform: rotate(0deg) translateX(0.26em) rotate(0deg); } to { transform: rotate(360deg) translateX(0.26em) rotate(-360deg); } }
+@keyframes not-found-aurora-one { 50% { transform: translate(11rem, 8rem) scale(1.2); } }
+@keyframes not-found-aurora-two { 50% { transform: translate(-12rem, -7rem) scale(0.8); } }
 
 @keyframes hero-marquee-scroll {
 	from {
@@ -139,6 +175,53 @@
 	direction: rtl;
 }
 
+@keyframes about-aurora-drift {
+	0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+	50% { transform: translate3d(9rem, 7rem, 0) scale(1.18); }
+}
+
+@keyframes about-glow-drift {
+	0%, 100% { transform: translate3d(0, 0, 0) scale(1.05); }
+	50% { transform: translate3d(-8rem, -9rem, 0) scale(0.86); }
+}
+
+@keyframes about-orbit-drift {
+	0% { transform: translateX(-50%) rotate(0deg) scale(0.94); }
+	50% { transform: translateX(-50%) rotate(180deg) scale(1.12); }
+	100% { transform: translateX(-50%) rotate(360deg) scale(0.94); }
+}
+
+@keyframes about-grid-drift {
+	from { background-position: 0 0; }
+	to { background-position: 0 96px; }
+}
+
+@keyframes about-spark-float {
+	0%, 100% { opacity: 0.18; transform: translateY(0) scale(0.7); }
+	50% { opacity: 1; transform: translateY(-2.25rem) scale(1.35); }
+}
+
+.about-background-aurora { animation: about-aurora-drift 17s ease-in-out infinite; }
+.about-background-glow { animation: about-glow-drift 20s ease-in-out infinite; }
+.about-background-orbit { animation: about-orbit-drift 34s linear infinite; }
+.about-background-grid { animation: about-grid-drift 12s linear infinite; }
+.about-background-spark { animation: about-spark-float 4.5s ease-in-out infinite; }
+.about-background-spark--two { animation-delay: -1.6s; }
+.about-background-spark--three { animation-delay: -3.1s; }
+
+/* On a one-column mobile layout, keep reel cards in a single, calm reveal motion. */
+@media (max-width: 767px) {
+	.reels-showcase .scroll-reveal,
+	.motion-showcase .scroll-reveal {
+		--reveal-x: 0;
+		--reveal-y: 1.25rem;
+		--reveal-scale: 1;
+		--reveal-rotate: 0deg;
+		--reveal-blur: 0px;
+		transition-duration: 420ms;
+	}
+}
+
 .scroll-reveal {
 	opacity: 0;
 	translate: var(--reveal-x, 0) var(--reveal-y, 2.25rem);
@@ -179,6 +262,21 @@
 	.education-orbit-reverse,
 	.education-particle {
 		animation-play-state: paused;
+	}
+
+	.about-background-aurora,
+	.about-background-glow,
+	.about-background-orbit,
+	.about-background-grid,
+	.about-background-spark {
+		animation-play-state: paused;
+	}
+
+	.not-found-page *,
+	.not-found-page *::before,
+	.not-found-page *::after {
+		animation-play-state: paused !important;
+		transition: none !important;
 	}
 
 	.scroll-reveal {

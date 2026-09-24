@@ -5,13 +5,18 @@ import Hero from './hero';
 import About from './about';
 import Footer from './footer';
 import ScrollReveal from './scroll-reveal';
+import NotFound from './not-found';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const isHomePage = window.location.pathname === '/';
+
 root.render(
-<>
-<Hero/>
-<About/>
-<Footer/>
-<ScrollReveal/>
-</>
+isHomePage ? (
+  <>
+    <Hero/>
+    <About/>
+    <Footer/>
+    <ScrollReveal/>
+  </>
+) : <NotFound />
 );
