@@ -9,10 +9,10 @@ import reelCoverSix from './assets/cover/reels-6.png'
 import motionCoverOne from './assets/cover/motion-cover-1.png'
 import motionCoverTwo from './assets/cover/motion-cover-2.png'
 import motionCoverThree from './assets/cover/motion-cover-3.png'
-const socialReelOne = "https://res.cloudinary.com/kukuwypk/video/upload/v1789299140/reels-1.mp4"; 
+const socialReelOne = "https://res.cloudinary.com/kukuwypk/video/upload/v1790605796/SA_SEP_10.mp4"; 
 const socialReelTwo = "https://res.cloudinary.com/kukuwypk/video/upload/v1789299908/param-4.mp4"; 
 const socialReelThree = "https://res.cloudinary.com/kukuwypk/video/upload/v1789300398/sahayam-10.mp4"; 
-const socialReelFour = "https://res.cloudinary.com/kukuwypk/video/upload/v1789300616/SMJ_09_1.mp4"; 
+const socialReelFour = "https://res.cloudinary.com/kukuwypk/video/upload/v1790605324/SMJ_10_2.mp4"; 
 const socialReelFive = "https://res.cloudinary.com/kukuwypk/video/upload/v1789300860/praasa-2.mp4"; 
 const socialReelSix = "https://res.cloudinary.com/kukuwypk/video/upload/v1789301183/heer-1.mp4"; 
 const motionReelOne = "https://res.cloudinary.com/kukuwypk/video/upload/v1789300070/graphics.mp4"; 
@@ -182,11 +182,12 @@ export default function About() {
 
           <div className="mt-[clamp(1rem,1vw,3rem)] flex flex-wrap gap-5 sm:gap-10" aria-label="Experience statistics">
             <div className="flex flex-col border-l-[0.28rem] border-[#76b5d1] pl-[0.7rem]">
-              <span className="text-[clamp(1rem,1.5vw,1.30rem)] font-normal text-[#76b5d1] tracking-wide">6+ months</span>
+              <span className="text-[clamp(1rem,1.5vw,1.30rem)] font-normal text-[#76b5d1] tracking-wide">1+ year
+              </span>
               <p className="text-[clamp(0.95rem,1.25vw,1.15rem)] text-[#f7f5f2] tracking-wider">Experience</p>
             </div>
             <div className="flex flex-col border-l-[0.28rem] border-[#76b5d1] pl-[0.7rem]">
-              <span className="text-[clamp(1rem,1.5vw,1.30rem)] font-normal text-[#76b5d1] tracking-wide">400+ videos</span>
+              <span className="text-[clamp(1rem,1.5vw,1.30rem)] font-normal text-[#76b5d1] tracking-wide">800+ videos</span>
               <span className="text-[clamp(0.95rem,1.25vw,1.15rem)] text-[#f7f5f2] tracking-wider">Completed</span>
             </div>
           </div>
